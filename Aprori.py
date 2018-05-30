@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Mar 27 21:51:20 2016
 
 @author: evanchang
 """
@@ -52,16 +51,9 @@ def find_candidates(dataset):
     return map(frozenset,freq_sets) #map it out to be a key of a dict. 
 
 #C1 = find_candidates(read("/Users/evanchang/Desktop/10000_dataset.txt"))
-#C1= find_candidates(read_data1("/Users/evanchang/Desktop/data1.txt"))
-#C1 = find_candidates(read_data1("/Users/evanchang/Desktop/data2.txt"))
-#candidates = list(find_candidates(read("/Users/evanchang/Desktop/10000_dataset.txt")))
-candidates = list(find_candidates(read_data1("/Users/evanchang/Desktop/data1.txt")))
-#candidates = list(find_candidates(read_data1("/Users/evanchang/Desktop/data2.txt")))
-#dataset = read("/Users/evanchang/Desktop/10000_dataset.txt")
-dataset = read_data1("/Users/evanchang/Desktop/data1.txt")
-#dataset = read_data1("/Users/evanchang/Desktop/data2.txt")
-#len_candidates = len(list(find_freqsets_data1(read("/Users/evanchang/Desktop/10000_dataset.txt"))))
-#len_candidates = len(list(find_freqsets_data1(read("/Users/evanchang/Desktop/10000_dataset.txt"))))
+candidates = list(find_candidates(read("10000_dataset.txt")))
+dataset = read("10000_dataset.txt")
+
 D = map(set, dataset)
 D_list = len(list(map(set,dataset)))
 
@@ -121,9 +113,7 @@ def joint_set(freq_sets, k):
 def apriori(dataset, minsupport = 0.05):
     #generates list of freq item sets including the joint sets
 #    These are going to be the freq sets in l to 
-#    C1 = list(find_candidates(read("/Users/evanchang/Desktop/10000_dataset.txt")))
-    C1 =list(find_candidates(read_data1("/Users/evanchang/Desktop/data1.txt")))
-#    C1 = list(find_candidates(read_data1("/Users/evanchang/Desktop/data2.txt")))
+    C1 = list(find_candidates(read("/Users/evanchang/Desktop/10000_dataset.txt")))
     D = map(set,dataset)
     D_list = len(list(map(set,dataset)))
     l1, support_data = find_freq(D,D_list ,C1, minsupport)
