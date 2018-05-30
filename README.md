@@ -1,4 +1,5 @@
 # Apriori_Customer_Dataset
+_NOTE_: The data for the examples below are from data1.txt
 
 The Aprori function takes a dataset and a minimum support. 
 
